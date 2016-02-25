@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ToolsControllerTest < ActionController::TestCase
   setup do
@@ -17,8 +17,10 @@ class ToolsControllerTest < ActionController::TestCase
   end
 
   test "should create tool" do
-    assert_difference('Tool.count') do
-      post :create, tool: { description: @tool.description, name: @tool.name, price: @tool.price }
+    assert_difference("Tool.count") do
+      post :create, tool: { description: @tool.description,
+                            name: @tool.name,
+                            price: @tool.price }
     end
 
     assert_redirected_to tool_path(assigns(:tool))
@@ -35,12 +37,14 @@ class ToolsControllerTest < ActionController::TestCase
   end
 
   test "should update tool" do
-    patch :update, id: @tool, tool: { description: @tool.description, name: @tool.name, price: @tool.price }
+    patch :update, id: @tool, tool: { description: @tool.description,
+                                      name: @tool.name,
+                                      price: @tool.price }
     assert_redirected_to tool_path(assigns(:tool))
   end
 
   test "should destroy tool" do
-    assert_difference('Tool.count', -1) do
+    assert_difference("Tool.count", -1) do
       delete :destroy, id: @tool
     end
 
